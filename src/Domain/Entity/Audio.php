@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domain\Entity;
 
+use Domain\ValueObject\EntityId;
+
 /**
  * Audio entity type.
  * 
@@ -15,9 +17,9 @@ final class Audio extends Entity
         EntityId $id,
         string $title,
         string $slug,
-        private readonly ?string $author = null,
-        private readonly ?int $durationSeconds = null,
-        private readonly ?string $format = null,
+        private ?string $author = null,
+        private ?int $durationSeconds = null,
+        private ?string $format = null,
         ?\DateTimeImmutable $createdAt = null,
         ?\DateTimeImmutable $updatedAt = null,
         ?\DateTimeImmutable $deletedAt = null

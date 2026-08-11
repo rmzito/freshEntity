@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domain\Entity;
 
+use Domain\ValueObject\EntityId;
+
 /**
  * Video entity type.
  * 
@@ -15,10 +17,10 @@ final class Video extends Entity
         EntityId $id,
         string $title,
         string $slug,
-        private readonly ?string $author = null,
-        private readonly ?int $durationSeconds = null,
-        private readonly ?string $format = null,
-        private readonly ?string $thumbnailPath = null,
+        private ?string $author = null,
+        private ?int $durationSeconds = null,
+        private ?string $format = null,
+        private ?string $thumbnailPath = null,
         ?\DateTimeImmutable $createdAt = null,
         ?\DateTimeImmutable $updatedAt = null,
         ?\DateTimeImmutable $deletedAt = null

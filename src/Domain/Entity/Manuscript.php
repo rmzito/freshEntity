@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domain\Entity;
 
+use Domain\ValueObject\EntityId;
+
 /**
  * Manuscript entity type.
  * 
@@ -15,8 +17,8 @@ final class Manuscript extends Entity
         EntityId $id,
         string $title,
         string $slug,
-        private readonly ?string $author = null,
-        private readonly ?string $language = null,
+        private ?string $author = null,
+        private ?string $language = null,
         ?\DateTimeImmutable $createdAt = null,
         ?\DateTimeImmutable $updatedAt = null,
         ?\DateTimeImmutable $deletedAt = null
