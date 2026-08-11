@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Entity;
+namespace App\Domain\Entity;
 
-use Domain\ValueObject\EntityId;
+use App\Domain\ValueObject\EntityId;
 
 /**
  * Manuscript entity type.

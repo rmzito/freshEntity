@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Content;
+namespace App\Domain\Content;
 
-use Domain\ValueObject\ContentNodeId;
+use App\Domain\ValueObject\ContentNodeId;
 
 /**
  * ContentTree represents a hierarchical structure of content nodes.

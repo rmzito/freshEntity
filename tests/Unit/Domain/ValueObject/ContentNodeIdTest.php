@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\ValueObject;
 
-use Domain\ValueObject\ContentNodeId;
+use App\Domain\ValueObject\ContentNodeId;
 use PHPUnit\Framework\TestCase;
 
 /**

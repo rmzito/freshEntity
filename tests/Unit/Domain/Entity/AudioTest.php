@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\Entity;
 
-use Domain\Entity\Audio;
-use Domain\ValueObject\EntityId;
+use App\Domain\Entity\Audio;
+use App\Domain\ValueObject\EntityId;
 use PHPUnit\Framework\TestCase;
 
 /**
