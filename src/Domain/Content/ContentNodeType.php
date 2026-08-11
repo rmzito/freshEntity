@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace Domain\Content;
+namespace App\Domain\Content;
 
-use Domain\ValueObject\ContentNodeId;
+use App\Domain\ValueObject\ContentNodeId;
 
 /**
  * ContentNodeType enum defining the types of content nodes.

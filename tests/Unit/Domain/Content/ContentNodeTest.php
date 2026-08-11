@@ -4,10 +4,10 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\Content;
 
-use Domain\Content\ContentNode;
-use Domain\Content\ContentNodeType;
-use Domain\ValueObject\ContentNodeId;
-use Domain\ValueObject\EntityId;
+use App\Domain\Content\ContentNode;
+use App\Domain\Content\ContentNodeType;
+use App\Domain\ValueObject\ContentNodeId;
+use App\Domain\ValueObject\EntityId;
 use PHPUnit\Framework\TestCase;
 
 /**

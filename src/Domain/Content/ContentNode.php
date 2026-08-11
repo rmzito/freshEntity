@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace Domain\Content;
+namespace App\Domain\Content;
 
-use Domain\ValueObject\ContentNodeId;
-use Domain\ValueObject\EntityId;
+use App\Domain\ValueObject\ContentNodeId;
+use App\Domain\ValueObject\EntityId;
 
 /**
  * ContentNode represents a single unit of content within an entity.

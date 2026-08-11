@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Domain\ValueObject;
+namespace App\Domain\ValueObject;
 
 /**
  * Value Object representing a unique ContentNode identifier.
@@ -17,6 +17,22 @@ final class ContentNodeId
         if ($value === '') {
             throw new \InvalidArgumentException('ContentNodeId cannot be empty');
         }
+    }
+
+    /**
+     * Generate a new random ContentNodeId.
+     */
+    public static function generate(): self
+    {
+        return new self(bin2hex(random_bytes(16)));
+    }
+
+    /**
+     * Create a ContentNodeId from a string.
+     */
+    public static function fromString(string $value): self
+    {
+        return new self($value);
     }
 
     public function value(): string

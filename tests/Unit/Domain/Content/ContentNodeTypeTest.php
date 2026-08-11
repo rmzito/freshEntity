@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Domain\Content;
 
-use Domain\Content\ContentNodeType;
+use App\Domain\Content\ContentNodeType;
 use PHPUnit\Framework\TestCase;
 
 /**
