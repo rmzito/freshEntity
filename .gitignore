@@ -1,54 +1,56 @@
 ```
+# Compiled and build artifacts
+*.pyc
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
+
 # Dependencies
+.venv/
+venv/
+node_modules/
 vendor/
+composer.lock
+*.lock
 
-# Test and cache
-.phpunit.result.cache
-
-# Logs
+# Logs and temp files
 *.log
+*.tmp
+*.swp
+*.swo
 
 # Environment
 .env
 .env.local
-*.env.*
+.env.*
 
-# IDE and editor files
+# Editors
 .vscode/
 .idea/
 *.swp
 *.swo
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# Build and distribution
+dist/
+build/
+target/
+*.tar
+*.tar.gz
+*.zip
+*.gz
 
-# Coverage reports
+# Coverage
 coverage/
 htmlcov/
 .coverage
 
-# Build artifacts
-dist/
-build/
-target/
-
-# Python specific
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
-*.so
-
-# PHP specific
-*.php~
-*.php.bak
-*.php.swp
-
-# Composer
-composer.lock
-
-# PHPUnit
-phpunit.xml
+# OS generated files
+.DS_Store
+Thumbs.db
 ```

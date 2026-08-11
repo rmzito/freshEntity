@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace Domain\Entity;
 
+use Domain\ValueObject\EntityId;
+
 /**
  * Book entity type.
  * 
@@ -15,9 +17,9 @@ final class Book extends Entity
         EntityId $id,
         string $title,
         string $slug,
-        private readonly ?string $author = null,
-        private readonly ?string $series = null,
-        private readonly ?int $seriesOrder = null,
+        private ?string $author = null,
+        private ?string $series = null,
+        private ?int $seriesOrder = null,
         ?\DateTimeImmutable $createdAt = null,
         ?\DateTimeImmutable $updatedAt = null,
         ?\DateTimeImmutable $deletedAt = null
