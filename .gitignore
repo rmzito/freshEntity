@@ -1,1 +1,54 @@
-Nothing should be ignored based on the provided file changes, as they only include markdown documentation files (.md) which are source files that should be tracked in version control.
+```
+# Dependencies
+vendor/
+
+# Test and cache
+.phpunit.result.cache
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+*.env.*
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Coverage reports
+coverage/
+htmlcov/
+.coverage
+
+# Build artifacts
+dist/
+build/
+target/
+
+# Python specific
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+
+# PHP specific
+*.php~
+*.php.bak
+*.php.swp
+
+# Composer
+composer.lock
+
+# PHPUnit
+phpunit.xml
+```
