@@ -1,1 +1,1 @@
-(docs/rewrite/REWRITE-BASELINE.md is just a documentation file, no need to ignore)
+Nothing should be ignored based on the provided file changes, as they only include markdown documentation files (.md) which are source files that should be tracked in version control.
