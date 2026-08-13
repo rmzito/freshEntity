@@ -35,7 +35,7 @@ final class ContentTreeTest extends TestCase
         $roots = $tree->roots();
         
         $this->assertCount(1, $roots);
-        $this->assertEquals('node-1', $roots[0]->id()->value());
+        $this->assertEquals('node-1', $roots[0]->getId()->value());
     }
 
     public function test_it_returns_children_of_node(): void
@@ -60,7 +60,7 @@ final class ContentTreeTest extends TestCase
         $found = $tree->getNode(new ContentNodeId('node-2'));
         
         $this->assertNotNull($found);
-        $this->assertSame('Section 1', $found->title());
+        $this->assertSame('Section 1', $found->getTitle());
     }
 
     public function test_it_returns_null_for_non_existent_node(): void
@@ -104,17 +104,19 @@ final class ContentTreeTest extends TestCase
         string $entityId,
         ContentNodeType $type,
         string $title,
-        int $order,
+        int $position,
         ?string $parentId = null
     ): ContentNode {
         return new ContentNode(
-            new ContentNodeId($id),
-            new EntityId($entityId),
-            $type,
-            $title,
-            'Content',
-            $order,
-            $parentId !== null ? new ContentNodeId($parentId) : null
+            id: new ContentNodeId($id),
+            entityId: new EntityId($entityId),
+            type: $type,
+            title: $title,
+            content: 'Content',
+            metadata: [],
+            path: '/' . strtolower($type->value) . '-' . $id,
+            position: $position,
+            parentId: $parentId !== null ? new ContentNodeId($parentId) : null
         );
     }
 }

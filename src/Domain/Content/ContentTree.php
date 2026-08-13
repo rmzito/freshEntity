@@ -38,7 +38,7 @@ final class ContentTree
     {
         return array_values(array_filter(
             $this->nodes,
-            fn(ContentNode $node) => $node->parentId() === null && !$node->isDeleted()
+            fn(ContentNode $node) => $node->getParentId() === null && !$node->isDeleted()
         ));
     }
 
@@ -52,8 +52,8 @@ final class ContentTree
         return array_values(array_filter(
             $this->nodes,
             fn(ContentNode $node) => 
-                $node->parentId() !== null && 
-                $node->parentId()->equals($parentId) && 
+                $node->getParentId() !== null && 
+                $node->getParentId()->equals($parentId) && 
                 !$node->isDeleted()
         ));
     }
@@ -64,7 +64,7 @@ final class ContentTree
     public function getNode(ContentNodeId $id): ?ContentNode
     {
         foreach ($this->nodes as $node) {
-            if ($node->id()->equals($id)) {
+            if ($node->getId()->equals($id)) {
                 return $node;
             }
         }
@@ -87,14 +87,16 @@ final class ContentTree
      */
     private function buildNodeTree(ContentNode $node): array
     {
-        $children = $this->children($node->id());
+        $children = $this->children($node->getId());
         
         return [
-            'id' => $node->id()->value(),
-            'type' => $node->type()->value,
-            'title' => $node->title(),
-            'content' => $node->content(),
-            'order' => $node->order(),
+            'id' => $node->getId()->value(),
+            'type' => $node->getType()->value,
+            'title' => $node->getTitle(),
+            'content' => $node->getContent(),
+            'position' => $node->getPosition(),
+            'path' => $node->getPath(),
+            'metadata' => $node->getMetadata(),
             'children' => array_map(fn(ContentNode $child) => $this->buildNodeTree($child), $children),
         ];
     }
