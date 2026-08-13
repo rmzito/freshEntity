@@ -1,5 +1,29 @@
 ```
-vendor/
-composer.lock
+# PHP specific
+*.php~
+*.php.bak
+*.swp
+
+# Test related
 .phpunit.result.cache
+
+# Dependencies
+vendor/
+
+# Logs
+*.log
+
+# Environment
+.env
+.env.local
+.env.*
+
+# Editor/IDE
+.vscode/
+.idea/
+*.tmp
+
+# OS
+.DS_Store
+Thumbs.db
 ```
