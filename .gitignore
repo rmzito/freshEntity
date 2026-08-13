@@ -1,29 +1,24 @@
 ```
-# PHP specific
-*.php~
-*.php.bak
-*.swp
-
-# Test related
+# Cache and test files
 .phpunit.result.cache
 
 # Dependencies
 vendor/
 
-# Logs
+# Logs and temp files
 *.log
+*.tmp
 
 # Environment
 .env
 .env.local
 .env.*
 
-# Editor/IDE
+# Editors
 .vscode/
 .idea/
-*.tmp
 
-# OS
+# OS generated files
 .DS_Store
 Thumbs.db
 ```
