@@ -1,29 +1,44 @@
 ```
-# PHP related
-*.phpc
-__pycache__/
+# Compiled and build artifacts
 *.pyc
-
-# Test related
-.phpunit.result.cache
+__pycache__/
+*.o
+*.obj
+*.class
+*.exe
+*.dll
+*.so
+*.a
+*.out
 
 # Dependencies
 vendor/
+node_modules/
+venv/
+.venv/
+.env
+.env.local
+.env.*
 
 # Logs and temp files
 *.log
 *.tmp
-
-# Environment
-.env
-.env.local
-*.env.*
+*.swp
 
 # Editors
 .vscode/
 .idea/
 
-# OS generated files
-.DS_Store
-Thumbs.db
+# Test cache
+.phpunit.result.cache
+
+# Coverage reports
+coverage/
+htmlcov/
+*.coverage
+
+# Build directories
+dist/
+build/
+target/
 ```
