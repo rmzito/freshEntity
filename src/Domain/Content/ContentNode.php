@@ -10,7 +10,7 @@ use App\Domain\ValueObject\EntityId;
 /**
  * ContentNode represents a single unit of content within an entity.
  * 
- * @label VERIFIED - Content nodes have id, entity_id, type, title, content, order, parent_id, created_at, updated_at
+ * @label VERIFIED - Content nodes have id, entity_id, type, title, content, metadata, path, position, parent_id, created_at, updated_at
  */
 final class ContentNode
 {
@@ -22,7 +22,9 @@ final class ContentNode
         private ContentNodeType $type,
         private string $title,
         private string $content,
-        private int $order,
+        private array $metadata,
+        private string $path,
+        private int $position,
         private ?ContentNodeId $parentId = null,
         private ?\DateTimeImmutable $createdAt = null,
         private ?\DateTimeImmutable $updatedAt = null
@@ -31,52 +33,62 @@ final class ContentNode
         $this->updatedAt = $this->createdAt;
     }
 
-    public function id(): ContentNodeId
+    public function getId(): ContentNodeId
     {
         return $this->id;
     }
 
-    public function entityId(): EntityId
+    public function getEntityId(): EntityId
     {
         return $this->entityId;
     }
 
-    public function type(): ContentNodeType
+    public function getType(): ContentNodeType
     {
         return $this->type;
     }
 
-    public function title(): string
+    public function getTitle(): string
     {
         return $this->title;
     }
 
-    public function content(): string
+    public function getContent(): string
     {
         return $this->content;
     }
 
-    public function order(): int
+    public function getMetadata(): array
     {
-        return $this->order;
+        return $this->metadata;
     }
 
-    public function parentId(): ?ContentNodeId
+    public function getPath(): string
+    {
+        return $this->path;
+    }
+
+    public function getPosition(): int
+    {
+        return $this->position;
+    }
+
+    public function getParentId(): ?ContentNodeId
     {
         return $this->parentId;
     }
 
-    public function createdAt(): \DateTimeImmutable
+    public function getCreatedAt(): \DateTimeImmutable
     {
         return $this->createdAt;
     }
 
-    public function updatedAt(): \DateTimeImmutable
+    public function getUpdatedAt(): ?\DateTimeImmutable
     {
         return $this->updatedAt;
     }
 
-    public function deletedAt(): ?\DateTimeImmutable
+    public function getDeletedAt(): ?\DateTimeImmutable
     {
         return $this->deletedAt;
     }
@@ -98,9 +110,21 @@ final class ContentNode
         $this->updatedAt = new \DateTimeImmutable();
     }
 
-    public function updateOrder(int $order): void
+    public function updateMetadata(array $metadata): void
     {
-        $this->order = $order;
+        $this->metadata = $metadata;
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function updatePath(string $path): void
+    {
+        $this->path = $path;
+        $this->updatedAt = new \DateTimeImmutable();
+    }
+
+    public function updatePosition(int $position): void
+    {
+        $this->position = $position;
         $this->updatedAt = new \DateTimeImmutable();
     }
 
