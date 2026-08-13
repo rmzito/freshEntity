@@ -1,22 +1,19 @@
 ```
-# PHP specific
-*.php~
-*.php.bak
-*.swp
-
-# Test related
-.phpunit.result.cache
-
 # Dependencies
 vendor/
 
-# Logs
-*.log
+# PHP specific
+*.php~
+*.swp
+.phpunit.result.cache
 
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
+
+# Logs
+*.log
 
 # Editor/IDE
 .vscode/

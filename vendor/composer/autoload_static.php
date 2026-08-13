@@ -22,6 +22,10 @@ class ComposerStaticInit1904089e015d6f1dc9e6e231e2dfbd4a
             'Psr\\Cache\\' => 10,
             'PhpParser\\' => 10,
         ),
+        'I' =>
+        array (
+            'Infrastructure\\' => 15,
+        ),
         'D' =>
         array (
             'Domain\\' => 7,
@@ -51,6 +55,10 @@ class ComposerStaticInit1904089e015d6f1dc9e6e231e2dfbd4a
         'PhpParser\\' =>
         array (
             0 => __DIR__ . '/..' . '/nikic/php-parser/lib/PhpParser',
+        ),
+        'Infrastructure\\' =>
+        array (
+            0 => __DIR__ . '/../..' . '/src/Infrastructure',
         ),
         'Domain\\' =>
         array (
