@@ -19,7 +19,7 @@ final class MarkdownImporterTest extends TestCase
     protected function setUp(): void
     {
         $this->importer = new MarkdownImporter();
-        $this->fixturesDir = __DIR__ . '/../../Fixtures/Import';
+        $this->fixturesDir = __DIR__ . '/../../../Fixtures/Import';
     }
 
     public function testSupportsMarkdownFiles(): void

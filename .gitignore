@@ -1,26 +1,4 @@
 ```
-# Dependencies
-vendor/
-
-# PHP specific
-*.php~
-*.swp
+#Cache and test artifacts
 .phpunit.result.cache
-
-# Environment
-.env
-.env.local
-*.env.*
-
-# Logs
-*.log
-
-# Editor/IDE
-.vscode/
-.idea/
-*.tmp
-
-# OS
-.DS_Store
-Thumbs.db
 ```

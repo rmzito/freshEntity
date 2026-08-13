@@ -86,13 +86,23 @@ final class MarkdownImporter extends AbstractImporter
             return false;
         }
 
-        // Verify it's actually a text/markdown file
+        // Verify it's actually a text/markdown file or plain text with markdown extension
         try {
             $finfo = new \finfo(FILEINFO_MIME_TYPE);
             $mimeType = $finfo->file($filePath);
             
-            return in_array($mimeType, self::ALLOWED_MIME_TYPES, true) ||
-                   $mimeType === 'text/plain'; // Allow plain text as fallback
+            // Accept markdown-specific MIME types
+            if (in_array($mimeType, self::ALLOWED_MIME_TYPES, true)) {
+                return true;
+            }
+            
+            // Fallback: accept plain text files with markdown extension
+            // This handles cases where the system doesn't recognize text/markdown
+            if ($mimeType === 'text/plain') {
+                return true;
+            }
+            
+            return false;
         } catch (\Throwable) {
             return false;
         }
