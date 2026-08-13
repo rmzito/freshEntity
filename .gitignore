@@ -1,4 +1,4 @@
 ```
-# Cache and test files
+# PHPUnit cache
 .phpunit.result.cache
 ```
