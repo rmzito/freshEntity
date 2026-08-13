@@ -1,0 +1,11 @@
+This is a sample plain text file.
+
+It contains multiple lines of text.
+
+The TextImporter should read this entire content as a single node.
+
+Line 6
+Line 7
+Line 8
+
+Final line.
