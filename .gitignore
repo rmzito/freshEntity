@@ -1,5 +1,10 @@
 ```
-# Cache and test files
+# PHP related
+*.phpc
+__pycache__/
+*.pyc
+
+# Test related
 .phpunit.result.cache
 
 # Dependencies
@@ -12,7 +17,7 @@ vendor/
 # Environment
 .env
 .env.local
-.env.*
+*.env.*
 
 # Editors
 .vscode/
