@@ -19,7 +19,8 @@ final class TextImporter extends AbstractImporter
     protected const MAX_FILE_SIZE = 5242880; // 5MB for text files
     
     protected const ALLOWED_MIME_TYPES = [
-        'text/plain'
+        'text/plain',
+        'application/x-empty' // Empty files are valid for text
     ];
 
     /**

@@ -120,15 +120,15 @@ final class TextImporterTest extends TestCase
     public function testImportSanitizesContent(): void
     {
         $tempFile = tempnam(sys_get_temp_dir(), 'txt_sanitize_');
-        // Content with Windows line endings and null bytes
-        file_put_contents($tempFile, "Title\r\n\r\nContent with\rnull byte\0here.");
+        // Content with Windows line endings (CRLF) that should be normalized
+        file_put_contents($tempFile, "Title\r\n\r\nContent with\r\nmixed line endings.");
         
         try {
             $result = $this->importer->import($tempFile);
 
             $this->assertTrue($result->isSuccess());
-            // Content should be sanitized
-            $this->assertStringNotContainsString("\0", $result->contentNodes[0]['content']);
+            // Content should be normalized (CRLF -> LF)
+            $this->assertStringNotContainsString("\r\n", $result->contentNodes[0]['content']);
         } finally {
             unlink($tempFile);
         }

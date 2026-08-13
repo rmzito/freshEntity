@@ -23,7 +23,9 @@ final class MarkdownImporter extends AbstractImporter
     protected const ALLOWED_MIME_TYPES = [
         'text/markdown',
         'text/plain',
-        'text/x-markdown'
+        'text/x-markdown',
+        'application/x-empty', // Empty files are valid for markdown
+        'application/octet-stream' // Fallback for binary data that will be sanitized
     ];
 
     /**
@@ -165,6 +167,24 @@ final class MarkdownImporter extends AbstractImporter
         $nodes = [];
         $position = 0;
         
+        // If content is empty after sanitization, return empty nodes
+        if (empty(trim($content))) {
+            return [];
+        }
+        $nodes = [];
+        $position = 0;
+        
+        // If content is empty after sanitization, return empty nodes
+        if (empty(trim($content))) {
+            return [];
+        }
+        $nodes = [];
+        $position = 0;
+        
+        // If content is empty after sanitization, return empty nodes
+        if (empty(trim($content))) {
+            return [];
+        }
         // Split by top-level headings (# )
         $sections = preg_split('/^(#\s+.+)$/m', $content, -1, PREG_SPLIT_DELIM_CAPTURE | PREG_SPLIT_NO_EMPTY);
         
